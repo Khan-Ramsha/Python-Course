@@ -1,0 +1,13 @@
+--------------Description-------------------                                            ----Commands----
+Get full list of pip options                                                          pip help or pip --help                                                                       
+To list the package which needs to be upgrade                                         pip list -o or pip list --outdated
+To display the installed package name and its version                                 pip list
+Outputs the installed by the user packages in a requirements format                   pip freeze
+that can be used to generate a requirements.txt file. like pcgname==version
+To generate a requirements.txt file using pip freeze                                  pip freeze > requirements.txt
+To install the packages listed in a requirements.txt file,                            pip install -r requirements.txt
+Upgrade a package                                                                     pip install --upgrade package_name   or pip install -U pip
+Upgrade all packages using pip                                                        pip list --outdated | ForEach-Object { $_.ToString().Split(' ')[0] } | ForEach-Object { pip install -U $_ }
+Uninstall a package                                                                   pip uninstall package_name
+Show information about a package                                                      pip show package_name
+Check if the provided package_name is installed and see its version if it is present: pip list | findstr package_name    
